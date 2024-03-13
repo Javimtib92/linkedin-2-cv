@@ -1,33 +1,29 @@
-import { useState } from 'preact/hooks'
-import preactLogo from './assets/preact.svg'
-import viteLogo from '/vite.svg'
-import './app.css'
+import profileData from "./config/profile";
+import "@fontsource-variable/archivo-narrow";
+import "@fontsource/barlow";
+import "./app.css";
+import { ResumePage } from "./components/ResumePage";
+import { ProfileDataProvider } from "./providers/profile";
+import html2canvas from "html2canvas-pro";
+import jsPDF from "jspdf";
 
 export function App() {
-  const [count, setCount] = useState(0)
+  const onExportClick = () => {
+    const element = document.getElementById("resume-page");
 
+    html2canvas(element).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF();
+      const imgWidth = 210; // A4 size width in mm
+      const imgHeight = (canvas.height * imgWidth) / canvas.width; // Scale height accordingly to image width
+      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+      pdf.save("output.pdf");
+    });
+  };
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://preactjs.com" target="_blank">
-          <img src={preactLogo} class="logo preact" alt="Preact logo" />
-        </a>
-      </div>
-      <h1>Vite + Preact</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/app.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p class="read-the-docs">
-        Click on the Vite and Preact logos to learn more
-      </p>
-    </>
-  )
+    <ProfileDataProvider profileData={{ profileData }}>
+      <button onClick={onExportClick}>Export</button>
+      <ResumePage />
+    </ProfileDataProvider>
+  );
 }

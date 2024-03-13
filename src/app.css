@@ -1,25 +1,25 @@
 #app {
-  max-width: 1280px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  -webkit-print-color-adjust: exact;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.preact:hover {
-  filter: drop-shadow(0 0 2em #673ab8aa);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-display);
 }
 
-.card {
-  padding: 2em;
+a,
+address,
+p {
+  font-family: var(--font-family-body);
 }
 
-.read-the-docs {
-  color: #888;
+p {
+  font-size: var(--font-size-xs);
 }
