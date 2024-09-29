@@ -13,7 +13,7 @@ export function ResumePage() {
       <div class="grid grid-cols-6 gap-4">
         <div class="col-span-2 bg-slate-800 text-gray-100 py-4">
           <div class="flex flex-col w-full items-center gap-2">
-            <img alt="profile avatar" class="w-12 h-12 rounded-full" src={profileData.image_url} />
+            <img alt="profile avatar" class="w-12 h-12 rounded-full" src={profileData.imageUrl} />
             <h2 class="text-xl">{profileData.name}</h2>
             <div class="w-8 border-b border-slate-700" />
             <h2 class="text-[10px] text-white/70 !font-body">{profileData.title}</h2>
@@ -79,7 +79,7 @@ export function ResumePage() {
           </div>
           <div class="mb-4">
             <h2 class="font-bold text-xl mb-4">Employment History</h2>
-            {profileData.job_history.map((job) => {
+            {profileData.jobHistory.map((job) => {
               if (!job.description) {
                 return null;
               }
@@ -102,7 +102,7 @@ export function ResumePage() {
           </div>
           <div class="mb-4">
             <h2 class="font-bold text-xl mb-4">Education</h2>
-            {profileData.education_history.map((education) => {
+            {profileData.educationHistory.map((education) => {
               return (
                 <div key={education.name} class="mb-4">
                   <div class="mb-2">

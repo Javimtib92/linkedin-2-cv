@@ -27,7 +27,7 @@ const extendedProfile = {
 };
 
 export default {
-  education_history: [
+  educationHistory: [
     {
       name: "IES Manacor",
       title: "Associate Degree Computer Science",
@@ -44,9 +44,9 @@ export default {
       endDate: 2014,
     },
   ],
-  image_url:
+  imageUrl:
     "https://media.licdn.com/dms/image/D4D03AQFbEPfAzBYJNA/profile-displayphoto-shrink_200_200/0/1709458297088?e=2147483647&v=beta&t=fwlHPsEOY8lkXIZP37AlY50OjpjGUz_DbE8vrqcNvSg",
-  job_history: [
+  jobHistory: [
     {
       name: "Self Employed",
       title: "",
