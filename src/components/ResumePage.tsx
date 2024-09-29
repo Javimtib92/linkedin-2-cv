@@ -1,7 +1,5 @@
-import React from "preact";
-
-import { useProfileData } from "../providers/profile";
-import { formatDate } from "../utils/date";
+import { useProfileData } from "@/src/providers/profile";
+import { formatDate } from "@/src/utils/date";
 
 export function ResumePage() {
   const { profileData } = useProfileData();
@@ -15,12 +13,10 @@ export function ResumePage() {
       <div class="grid grid-cols-6 gap-4">
         <div class="col-span-2 bg-slate-800 text-gray-100 py-4">
           <div class="flex flex-col w-full items-center gap-2">
-            <img class="w-12 h-12 rounded-full" src={profileData.image_url} />
+            <img alt="profile avatar" class="w-12 h-12 rounded-full" src={profileData.image_url} />
             <h2 class="text-xl">{profileData.name}</h2>
-            <div class="w-8 border-b border-slate-700"></div>
-            <h2 class="text-[10px] text-white/70 !font-body">
-              {profileData.title}
-            </h2>
+            <div class="w-8 border-b border-slate-700" />
+            <h2 class="text-[10px] text-white/70 !font-body">{profileData.title}</h2>
           </div>
 
           <div class="py-8 px-8">
@@ -38,7 +34,7 @@ export function ResumePage() {
               <h2 class="font-bold">Links</h2>
               {profileData.links.map((link) => {
                 return (
-                  <a class="text-xs" href={link.href}>
+                  <a key={link.name} class="text-xs" href={link.href}>
                     {link.name}
                   </a>
                 );
@@ -48,7 +44,7 @@ export function ResumePage() {
               <h2 class="font-bold">Skills</h2>
               <ul class="text-xs space-y-2">
                 {profileData.skills.map((skill) => (
-                  <li>{skill}</li>
+                  <li key={skill}>{skill}</li>
                 ))}
               </ul>
             </div>
@@ -62,7 +58,7 @@ export function ResumePage() {
               <h2 class="font-bold">Languages</h2>
               <ul class="text-xs space-y-2">
                 {profileData.languages.map((language) => (
-                  <li>{language}</li>
+                  <li key={language}>{language}</li>
                 ))}
               </ul>
             </div>
@@ -74,10 +70,11 @@ export function ResumePage() {
             <h2 class="font-bold text-xl">Profile</h2>
             {profileData.description && (
               <p
+                // biome-ignore lint/security/noDangerouslySetInnerHtml: we can trust this description source
                 dangerouslySetInnerHTML={{
                   __html: profileData.description,
                 }}
-              ></p>
+              />
             )}
           </div>
           <div class="mb-4">
@@ -87,7 +84,7 @@ export function ResumePage() {
                 return null;
               }
               return (
-                <div class="mb-8">
+                <div key={job.name} class="mb-8">
                   <div class="mb-2">
                     <h3 class="font-bold text-sm leading-tight">
                       {job.title}, {job.name}
@@ -97,7 +94,8 @@ export function ResumePage() {
                     </small>
                   </div>
 
-                  <p dangerouslySetInnerHTML={{ __html: job.description }}></p>
+                  {/* biome-ignore lint/security/noDangerouslySetInnerHtml: we can trust this description source */}
+                  <p dangerouslySetInnerHTML={{ __html: job.description }} />
                 </div>
               );
             })}
@@ -106,23 +104,23 @@ export function ResumePage() {
             <h2 class="font-bold text-xl mb-4">Education</h2>
             {profileData.education_history.map((education) => {
               return (
-                <div class="mb-4">
+                <div key={education.name} class="mb-4">
                   <div class="mb-2">
                     <h3 class="font-bold text-sm leading-tight">
                       {education.title}, {education.name}
                     </h3>
                     <small class="text-black/40 text-[10px]">
-                      {formatDate(education.startDate)} -{" "}
-                      {formatDate(education.endDate)}
+                      {formatDate(education.startDate)} - {formatDate(education.endDate)}
                     </small>
                   </div>
 
                   {education.description && (
                     <p
+                      // biome-ignore lint/security/noDangerouslySetInnerHtml: we can trust this description source
                       dangerouslySetInnerHTML={{
                         __html: education.description,
                       }}
-                    ></p>
+                    />
                   )}
                 </div>
               );

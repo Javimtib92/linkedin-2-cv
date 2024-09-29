@@ -1,16 +1,20 @@
-import React, { createContext } from "preact";
+import type profileData from "@/src/config/profile";
+import { createContext } from "preact";
+import type { ReactNode } from "preact/compat";
 import { useContext } from "preact/hooks";
-import profileData from "../config/profile";
+
+type ProfileDataProviderProps = {
+  profileData: null | typeof profileData;
+  children: ReactNode;
+};
 
 const ProfileDataContext = createContext<{
   profileData: null | typeof profileData;
 }>({ profileData: null });
 
-export const ProfileDataProvider = ({ children }) => {
+export const ProfileDataProvider = ({ profileData, children }: ProfileDataProviderProps) => {
   return (
-    <ProfileDataContext.Provider value={{ profileData }}>
-      {children}
-    </ProfileDataContext.Provider>
+    <ProfileDataContext.Provider value={{ profileData }}>{children}</ProfileDataContext.Provider>
   );
 };
 

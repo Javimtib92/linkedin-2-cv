@@ -12,7 +12,8 @@ const extendedProfile = {
     "Terraform",
   ],
   hobbies: [],
-  description: `Over 9 years of experience in software development specialized in <b>JavaScript</b>. Expert in TypeScript, React, NextJS and NodeJS. Product oriented engineer. Mentor and Tech Lead. Comfortable in the Frontend and the Backend. Knowledge of Terraform and AWS.`,
+  description:
+    "Over 9 years of experience in software development specialized in <b>JavaScript</b>. Expert in TypeScript, React, NextJS and NodeJS. Product oriented engineer. Mentor and Tech Lead. Comfortable in the Frontend and the Backend. Knowledge of Terraform and AWS.",
   title: "Senior Full Stack Developer",
   phoneNumber: "+34 629 479 837",
   email: "javier.munoz.tous@gmail.com",

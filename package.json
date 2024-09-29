@@ -1,26 +1,31 @@
 {
-  "name": "my-vue-app",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@fontsource-variable/archivo-narrow": "^5.0.20",
-    "@fontsource/barlow": "^5.0.12",
-    "@tailwindcss/vite": "^4.0.0-alpha.8",
-    "html2canvas": "^1.4.1",
-    "html2canvas-pro": "^1.4.3",
-    "jspdf": "^2.5.1",
-    "preact": "^10.19.5",
-    "tailwindcss": "4.0.0-alpha.8"
-  },
-  "devDependencies": {
-    "@preact/preset-vite": "^2.8.1",
-    "vite": "^5.1.4"
-  }
+	"name": "my-vue-app",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"start": "vite",
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "biome check --write ./src"
+	},
+	"dependencies": {
+		"@fontsource-variable/archivo-narrow": "^5.1.0",
+		"@fontsource/barlow": "^5.1.0",
+		"@tailwindcss/vite": "^4.0.0-alpha.8",
+		"html2canvas": "^1.4.1",
+		"html2canvas-pro": "^1.5.8",
+		"jspdf": "^2.5.2",
+		"preact": "^10.24.1",
+		"tailwindcss": "4.0.0-alpha.8",
+		"typescript": "^5.6.2"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.2",
+		"@preact/preset-vite": "^2.9.1",
+		"@types/node": "^22.7.4",
+		"vite": "^5.4.8"
+	},
+	"packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903"
 }

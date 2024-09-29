@@ -1,0 +1,60 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.7.0/schema.json",
+  "files": {
+    "ignoreUnknown": true
+  },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "javascript": {
+    "jsxRuntime": "transparent"
+  },
+  "json": {
+    "formatter": {
+      "enabled": true
+    }
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "all": true,
+      "style": {
+        "all": true,
+        "noDefaultExport": "off",
+        "useFilenamingConvention": {
+          "level": "error",
+          "options": {
+            "strictCase": true,
+            "requireAscii": true,
+            "filenameCases": ["camelCase", "export"]
+          }
+        }
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100,
+    "attributePosition": "auto"
+  },
+  "overrides": [
+    {
+      "include": ["main.tsx"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noNonNullAssertion": "off"
+          }
+        }
+      }
+    }
+  ]
+}
