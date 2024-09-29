@@ -15,7 +15,7 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0
       '@tailwindcss/vite':
-        specifier: ^4.0.0-alpha.8
+        specifier: ^4.0.0-alpha.25
         version: 4.0.0-alpha.25(vite@5.4.8(@types/node@22.7.4)(lightningcss@1.27.0))
       html2canvas:
         specifier: ^1.4.1
@@ -30,8 +30,8 @@ importers:
         specifier: ^10.24.1
         version: 10.24.1
       tailwindcss:
-        specifier: 4.0.0-alpha.8
-        version: 4.0.0-alpha.8
+        specifier: 4.0.0-alpha.25
+        version: 4.0.0-alpha.25
       typescript:
         specifier: ^5.6.2
         version: 5.6.2
@@ -892,9 +892,6 @@ packages:
   tailwindcss@4.0.0-alpha.25:
     resolution: {integrity: sha512-nysTVicWw8JC06+EAJvT8+4RAV7qZpuKwz0QOpfL88/+XKG+HIrawSz5XxXigF48l37ehZfREbqGiS7cCN90jg==}
 
-  tailwindcss@4.0.0-alpha.8:
-    resolution: {integrity: sha512-s7RsnLUep6SQnmYgCVCTj9D/P2tiubPZi/Ae1m58dG4Y3NWgXWo+C0L/95Qf8VNNsD76Qv8Srb4LojyTzqbE7A==}
-
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
@@ -1712,10 +1709,6 @@ snapshots:
     optional: true
 
   tailwindcss@4.0.0-alpha.25: {}
-
-  tailwindcss@4.0.0-alpha.8:
-    dependencies:
-      lightningcss: 1.27.0
 
   tapable@2.2.1: {}
 
